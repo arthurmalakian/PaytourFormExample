@@ -1,40 +1,7 @@
 <template>
-  <div class="form grid grid-cols-2 gap-4 content-center px-10 py-10">
-    <div class="md:flex">
-      <div class="md:flex-shrink-0">
-        <img
-          class="rounded-lg md:w-56"
-          src="./assets/curriculos.jpg"
-          width="448"
-          height="299"
-          alt="Woman paying for a purchase"
-        />
-      </div>
-      <div class="mt-4 md:mt-0 md:ml-6">
-        <div class="uppercase tracking-wide text-sm text-indigo-600 font-bold">
-          BASE DE TALENTOS
-        </div>
-        <a
-          href="#"
-          class="
-            block
-            mt-1
-            text-lg
-            leading-tight
-            font-semibold
-            text-gray-900
-            hover:underline
-          "
-          >Cadastre seu currículo!</a
-        >
-        <p class="mt-2 text-gray-600">
-          Empresas de todo o país tem acesso a essa base, seu currículo será
-          entregue diretamente a todas elas.
-        </p>
-      </div>
-    </div>
+  <div class="form grid grid-cols-2 gap-2 content-center px-10 py-10">
     <form class="w-full max-w-lg">
-      <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="flex flex-wrap -mx-3">
         <div class="w-full px-3">
           <label
             class="
@@ -59,8 +26,8 @@
               border border-gray-200
               rounded
               py-3
-              px-4
               mb-3
+              px-4
               leading-tight
               focus:outline-none focus:bg-white focus:border-gray-500
             "
@@ -70,7 +37,7 @@
           />
         </div>
       </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="flex flex-wrap -mx-3">
         <div class="w-full px-3">
           <label
             class="
@@ -106,8 +73,8 @@
           />
         </div>
       </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
           <label
             class="
               block
@@ -140,7 +107,7 @@
             placeholder="Desenvolvedor Fullstack"
           />
         </div>
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
           <label
             class="
               block
@@ -172,17 +139,18 @@
               "
               id="education_level"
             >
-              <option>Analfabeto</option>
-              <option>Até 5º Ano Incompleto</option>
-              <option>5º Ano Completo</option>
-              <option>6º ao 9º Ano do Fundamental</option>
-              <option>Fundamental Completo</option>
-              <option>Médio Incompleto</option>
-              <option>Médio Completo</option>
-              <option>Superior Incompleto</option>
-              <option>Superior Completo</option>
-              <option>Mestrado</option>
-              <option>Doutorado</option>
+              <option selected disabled>Selecione uma opção</option>
+              <option value="1">Analfabeto</option>
+              <option value="2">Até 5º Ano Incompleto</option>
+              <option value="3">5º Ano Completo</option>
+              <option value="4">6º ao 9º Ano do Fundamental</option>
+              <option value="5">Fundamental Completo</option>
+              <option value="6">Médio Incompleto</option>
+              <option value="7">Médio Completo</option>
+              <option value="8">Superior Incompleto</option>
+              <option value="9">Superior Completo</option>
+              <option value="10">Mestrado</option>
+              <option value="11">Doutorado</option>
             </select>
             <div
               class="
@@ -209,7 +177,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="flex flex-wrap -mx-3 mb-3">
         <div class="w-full px-3">
           <label
             class="
@@ -222,7 +190,7 @@
             "
             for="grid-password"
           >
-            Password
+            Observações
           </label>
           <textarea
             class="
@@ -246,18 +214,126 @@
             style="resize: none"
             placeholder="Sou um ótimo profissional e procuro sempre estar atualizado!"
           />
-          <p class="text-gray-600 text-xs italic">
-            Make it as long and as crazy as you'd like
-          </p>
         </div>
       </div>
-<input datetimepicker class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" type="text" placeholder="Please select a date" />
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="
+              block
+              uppercase
+              tracking-wide
+              text-gray-700 text-xs
+              font-bold
+              mb-2
+            "
+            for="target_job"
+          >
+            Data de envio
+          </label>
+          <Datepicker v-model="date" />
+        </div>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label
+            class="
+              block
+              uppercase
+              tracking-wide
+              text-gray-700 text-xs
+              font-bold
+              mb-2
+            "
+            for="target_job"
+          >
+            Currículo
+          </label>
+          <input
+            class="
+              form-control
+              block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700
+              focus:bg-white
+              focus:border-blue-600
+              focus:outline-none
+            "
+            type="file"
+            id="formFile"
+          />
+        </div>
+      </div>
+      <div class="md:flex md:items-center">
+          <button
+            class="
+              shadow
+              bg-indigo-600
+              hover:bg-indigo-400
+              focus:shadow-outline focus:outline-none
+              text-white
+              font-bold
+              py-2
+              px-4
+              rounded
+              w-full
+            "
+            type="button"
+          >
+            Enviar
+          </button>
+      </div>
     </form>
+    <div class="md:flex">
+      <div class="md:flex-shrink-0">
+        <img
+          class="rounded-lg md:w-56"
+          src="./assets/curriculos.jpg"
+          width="448"
+          height="299"
+          alt="Woman paying for a purchase"
+        />
+      </div>
+      <div class="mt-4 md:mt-0 md:ml-6">
+        <div class="uppercase tracking-wide text-sm text-indigo-600 font-bold">
+          BASE DE TALENTOS
+        </div>
+        <a
+          href="#"
+          class="
+            block
+            mt-1
+            text-lg
+            leading-tight
+            font-semibold
+            text-gray-900
+            hover:underline
+          "
+          >Cadastre seu currículo!</a
+        >
+        <p class="mt-2 text-gray-600">
+          Empresas de todo o país tem acesso a essa base, seu currículo será
+          entregue diretamente a todas elas.
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
+import Datepicker from "@vuepic/vue-datepicker";
+
+const date = ref();
 </script>
 
 <style>
