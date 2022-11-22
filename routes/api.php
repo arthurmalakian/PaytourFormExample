@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EducationLevel\EducationLevelController;
+use App\Http\Controllers\Resume\ResumeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/resume',[ResumeController::class,'index']);
+Route::post('/resume',[ResumeController::class,'store']);
+Route::get('/education-level',[EducationLevelController::class,'index']);
